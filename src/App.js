@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import CamundaApi from "./components/camundaApi";
 
 class App extends Component {
   constructor(props) {
@@ -39,16 +40,7 @@ class App extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className="App">
-          <u1>
-            {item.map((item) => (
-              <li key={item.id}>
-                Name: {item.name} | Email: {item.email}
-              </li>
-            ))}
-            ;
-          </u1>
-        </div>
+        <CamundaApi />
       );
     }
   }
