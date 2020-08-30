@@ -28,17 +28,6 @@
   color: #61dafb;
 }
 
-.test {
-  background-color: #f3f3f3;
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  overflow:hidden;
-  z-index:-1; /* Remove this line if it's not going to be a background! */
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -46,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.mainBody {
+  background-color: white;
+  margin: 2em;
+  padding: 1em;
+  border-radius: 5px;
+  /*border: 1px solid #A6A6A6;*/
 }

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import NavBar from "./components/navbar";
+import Footer from "./components/footer";
+import FileSearch from "./components/fileSearch";
 import "./App.css";
 import CamundaApi from "./components/camundaApi";
 
@@ -28,6 +31,10 @@ class App extends Component {
       });
   }
 
+  test = () => {
+    alert("Button clicked");
+  }
+
   render() {
     // important to check if loaded
     // because mount method comes AFTER render method (so first time data won't be there yet)
@@ -40,7 +47,11 @@ class App extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <CamundaApi />
+        <div className="test">
+          <NavBar />
+          <FileSearch type="Lieferschein" test={this.test}/>
+          <Footer />
+        </div>
       );
     }
   }
