@@ -25,6 +25,9 @@ class FileSearch extends Component {
             placeholder="z.B. 'LS8347'"
             aria-label="Lieferschein"
             aria-describedby="basic-addon2"
+            onChange={(event) =>
+              this.props.setLieferscheinNummer(event.target.value)
+            }
           />
           <div class="input-group-append">
             <button id="searchLieferscheinButton" class="btn btn-outline-secondary" type="button" onClick={this.props.test}>

@@ -11,6 +11,7 @@ class App extends Component {
     this.state = {
       item: [],
       isLoaded: false,
+      lieferscheinNummer: ""
     };
   }
 
@@ -32,7 +33,15 @@ class App extends Component {
   }
 
   test = () => {
-    alert("Button clicked");
+    const lsn = this.state.lieferscheinNummer;
+    alert("You entered: " + lsn);
+    
+  }
+
+  setLieferscheinNummer = (lsNummer) => {
+    let lieferscheinNummer = [...this.state.lieferscheinNummer];
+    lieferscheinNummer = lsNummer;
+    this.setState({ lieferscheinNummer});
   }
 
   render() {
@@ -49,7 +58,7 @@ class App extends Component {
       return (
         <div className="test">
           <NavBar />
-          <FileSearch type="Lieferschein" test={this.test}/>
+          <FileSearch type="Lieferschein" test={this.test} setLieferscheinNummer={this.setLieferscheinNummer}/>
           <Footer />
         </div>
       );
