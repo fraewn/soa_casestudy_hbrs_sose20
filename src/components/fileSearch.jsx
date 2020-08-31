@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../css/fileSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 class FileSearch extends Component {
   constructor(props) {
     super(props);

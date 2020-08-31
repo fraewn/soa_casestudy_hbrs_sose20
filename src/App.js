@@ -3,6 +3,7 @@ import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import FileSearch from "./components/fileSearch";
 import "./App.css";
+import Axios from 'axios';
 import CamundaApi from "./components/camundaApi";
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
 
   // TO USE THIS YOU NEED TO CRATE SPECIAL REACT-API APP NOT NORMAL REACT APP SO THIS WON'T WORK
   componentDidMount() {
-    // get data from restendpoint
+/*      // get data from restendpoint
     fetch("https://jsonplaceholder.typicode.com/users")
       // save data in variable res and convert res to json format
       .then((res) => res.json())
@@ -29,13 +30,12 @@ class App extends Component {
           // save data from outside to application
           item: json,
         });
-      });
+      });  */
   }
 
   test = () => {
     const lsn = this.state.lieferscheinNummer;
     alert("You entered: " + lsn);
-    
   }
 
   setLieferscheinNummer = (lsNummer) => {
@@ -50,11 +50,20 @@ class App extends Component {
 
     // map function creates new array with inputted data
 
-    var { isLoaded, item } = this.state;
+    //var { isLoaded, item } = this.state;
 
-    if (!isLoaded) {
+/*     if (!isLoaded) {
       return <div>Loading...</div>;
-    } else {
+    } else { */
+      Axios({
+        method: "GET",
+        url: "http://localhost:5000/",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => {
+        console.log(res.data.message);
+      });
       return (
         <div className="test">
           <NavBar />
@@ -63,7 +72,7 @@ class App extends Component {
         </div>
       );
     }
-  }
+  // }
 }
 
 export default App;
